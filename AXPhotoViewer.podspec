@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
     ps.ios.deployment_target = '8.0'
     ps.tvos.deployment_target = '9.0'
     ps.dependency      'AXPhotoViewer/Core'
-    ps.dependency      'PINRemoteImage', '~> 3.0.0-beta.9'
+    ps.dependency      'PINRemoteImage'
     ps.source_files  = 'Source/Integrations/PINRemoteImageIntegration.swift'
   end
 

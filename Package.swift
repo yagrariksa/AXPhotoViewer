@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "Core",
-            targets: ["Core-swift", "Core-C"]
+            targets: ["Core-swift", "Extensions"]
         ),
     ],
     dependencies: [
@@ -26,10 +26,7 @@ let package = Package(
             ],
             path: "Source",
             exclude: [
-                "Extensions/FLAnimatedImageView+AXExtensions.h", 
-                "Extensions/FLAnimatedImageView+AXExtensions.m", 
-                "Extensions/UIImageView+AXExtensions.h", 
-                "Extensions/UIImageView+AXExtensions.m", 
+                "Extensions", 
             ],
             sources: [
                 "Classes", 
@@ -42,15 +39,17 @@ let package = Package(
             ]
         ),
         .target(
-            name: "Core-C",
-            dependencies: [],
-            path: "Source/Extensions",
-            sources: [
-                "FLAnimatedImageView+AXExtensions.h",
-                "FLAnimatedImageView+AXExtensions.m",
-                "UIImageView+AXExtensions.h",
-                "UIImageView+AXExtensions.m",
+            name: "Extensions",
+            dependencies: [
+                .package(url: "https://github.com/Flipboard/FLAnimatedImage", from: "1.0.0"),
             ],
+            path: "Source/Extensions",
+            // sources: [
+            //     "FLAnimatedImageView+AXExtensions.h",
+            //     "FLAnimatedImageView+AXExtensions.m",
+            //     "UIImageView+AXExtensions.h",
+            //     "UIImageView+AXExtensions.m",
+            // ],
             publicHeadersPath: "."
         )
     ]

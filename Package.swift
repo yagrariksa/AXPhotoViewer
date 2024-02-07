@@ -9,7 +9,7 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Core",
+            name: "AXPhotoViewer",
             targets: ["Core-swift", "Core-C"]
         ),
     ],

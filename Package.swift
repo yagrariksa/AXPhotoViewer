@@ -33,10 +33,10 @@ let package = Package(
                 "Utilities", 
                 "AXBundle.swift",
                 "AXConstants.swift",
-                "Integrations/SimpleNetworkIntegration.swift" // Include specific file
+                "Integrations/SimpleNetworkIntegration.swift"
             ],
             resources: [
-                .copy("Assets") // Include asset catalogs in "Assets" directory
+                .copy("Assets/AXPhotoViewer.xcassets")
             ]
         )
     ]

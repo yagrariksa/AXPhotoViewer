@@ -9,9 +9,9 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "AXPhotoViewer",
-            targets: ["AXPhotoViewer"]
-        )
+            name: "Core",
+            targets: ["Core"]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/yagrariksa/AXStateButton", .branch("master")),
@@ -24,19 +24,6 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "AXPhotoViewer",
-            dependencies: [
-                .target(name: "Core"),
-                .product(name: "SDWebImage", package: "SDWebImage"),
-                .product(name: "PINRemoteImage", package: "PINRemoteImage"),
-                .product(name: "AFNetworking", package: "AFNetworking"),
-                .product(name: "Kingfisher", package: "Kingfisher"),
-                .product(name: "Nuke", package: "Nuke")
-            ],
-            path: "Source",
-            exclude: ["Integrations"]
-        ),
-        .target(
             name: "Core",
             dependencies: [
                 .product(name: "AXStateButton", package: "AXStateButton"),
@@ -44,7 +31,18 @@ let package = Package(
                 .product(name: "FLAnimatedImage_tvOS", package: "FLAnimatedImage"),
             ],
             path: "Source",
-            sources: ["Classes", "Protocols", "Extensions", "Utilities"]
+            sources: [
+                "Source/Classes", 
+                "Source/Extensions", 
+                "Source/Protocols", 
+                "Source/Utilities", 
+                "Source/AXBundle.swift",
+                "Source/AXConstants.swift",
+                "Source/Integrations/SimpleNetworkIntegration.swift" // Include specific file
+            ],
+            resources: [
+                .copy("Assets") // Include asset catalogs in "Assets" directory
+            ]
         )
     ]
 )

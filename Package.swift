@@ -16,11 +16,6 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/yagrariksa/AXStateButton", .branch("master")),
         .package(url: "https://github.com/Flipboard/FLAnimatedImage", from: "1.0.0"),
-        .package(url: "https://github.com/SDWebImage/SDWebImage.git", from: "5.0.0"),
-        .package(url: "https://github.com/pinterest/PINRemoteImage.git", from: "3.0.0"),
-        .package(url: "https://github.com/yagrariksa/AFNetworking.git", .branch("v3.1.0")),
-        .package(url: "https://github.com/onevcat/Kingfisher.git", from: "6.0.0"),
-        .package(url: "https://github.com/kean/Nuke.git", from: "10.0.0")
     ],
     targets: [
         .target(

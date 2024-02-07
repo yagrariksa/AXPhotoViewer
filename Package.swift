@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "AXPhotoViewer",
-            targets: ["Core-swift", "Core-C"]
+            targets: ["AXPhotoViewerSwift", "AXPhotoViewerC"]
         ),
     ],
     dependencies: [
@@ -19,10 +19,11 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Core-swift",
+            name: "AXPhotoViewerSwift",
             dependencies: [
                 .product(name: "AXStateButton", package: "AXStateButton"),
                 .product(name: "FLAnimatedImage", package: "FLAnimatedImage"),
+                .product(name: "FLAnimatedImage_tvOS", package: "FLAnimatedImage"),
             ],
             path: "Source",
             exclude: [
@@ -42,10 +43,11 @@ let package = Package(
             ]
         ),
         .target(
-            name: "Core-C",
+            name: "AXPhotoViewerC",
             dependencies: [
+                .product(name: "AXStateButton", package: "AXStateButton"),
                 .product(name: "FLAnimatedImage", package: "FLAnimatedImage"),
-
+                .product(name: "FLAnimatedImage_tvOS", package: "FLAnimatedImage"),
             ],
             path: "Source/Extensions",
             sources: [

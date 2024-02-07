@@ -27,13 +27,13 @@ let package = Package(
             ],
             path: "Source",
             sources: [
-                "Source/Classes", 
-                "Source/Extensions", 
-                "Source/Protocols", 
-                "Source/Utilities", 
-                "Source/AXBundle.swift",
-                "Source/AXConstants.swift",
-                "Source/Integrations/SimpleNetworkIntegration.swift" // Include specific file
+                "Classes", 
+                "Extensions", 
+                "Protocols", 
+                "Utilities", 
+                "AXBundle.swift",
+                "AXConstants.swift",
+                "Integrations/SimpleNetworkIntegration.swift" // Include specific file
             ],
             resources: [
                 .copy("Assets") // Include asset catalogs in "Assets" directory

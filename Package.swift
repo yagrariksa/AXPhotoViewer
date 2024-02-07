@@ -43,7 +43,10 @@ let package = Package(
         ),
         .target(
             name: "Core-C",
-            dependencies: [],
+            dependencies: [
+                .product(name: "FLAnimatedImage", package: "FLAnimatedImage"),
+
+            ],
             path: "Source/Extensions",
             sources: [
                 "FLAnimatedImageView+AXExtensions.h",

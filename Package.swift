@@ -10,22 +10,27 @@ let package = Package(
     products: [
         .library(
             name: "Core",
-            targets: ["Core"]
+            targets: ["Core-swift", "Core-C"]
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/yagrariksa/AXStateButton", .branch("master")),
+        .package(url: "https://github.com/yagrariksa/AXStateButton", .branch("v-1.1.4")),
         .package(url: "https://github.com/Flipboard/FLAnimatedImage", from: "1.0.0"),
     ],
     targets: [
         .target(
-            name: "Core",
+            name: "Core-swift",
             dependencies: [
                 .product(name: "AXStateButton", package: "AXStateButton"),
                 .product(name: "FLAnimatedImage", package: "FLAnimatedImage"),
-                .product(name: "FLAnimatedImage_tvOS", package: "FLAnimatedImage"),
             ],
             path: "Source",
+            exclude: [
+                "Extensions/FLAnimatedImageView+AXExtensions.h", 
+                "Extensions/FLAnimatedImageView+AXExtensions.m", 
+                "Extensions/UIImageView+AXExtensions.h", 
+                "Extensions/UIImageView+AXExtensions.m", 
+            ],
             sources: [
                 "Classes", 
                 "Extensions", 
@@ -34,10 +39,19 @@ let package = Package(
                 "AXBundle.swift",
                 "AXConstants.swift",
                 "Integrations/SimpleNetworkIntegration.swift"
-            ],
-            resources: [
-                .copy("Assets/AXPhotoViewer.xcassets")
             ]
+        ),
+        .target(
+            name: "Core-C",
+            dependencies: [],
+            path: "Source/Extensions",
+            sources: [
+                "FLAnimatedImageView+AXExtensions.h",
+                "FLAnimatedImageView+AXExtensions.m",
+                "UIImageView+AXExtensions.h",
+                "UIImageView+AXExtensions.m",
+            ],
+            publicHeadersPath: "."
         )
     ]
 )

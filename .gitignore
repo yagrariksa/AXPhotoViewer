@@ -30,3 +30,4 @@ Pods/
 ## OS X
 .DS_Store
 .build/
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata

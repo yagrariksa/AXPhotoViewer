@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "AXStateButton",
+        "repositoryURL": "https://github.com/yagrariksa/AXStateButton",
+        "state": {
+          "branch": "v-1.1.4",
+          "revision": "08a38d772c6e4f6590aad5c51947d80d425deb45",
+          "version": null
+        }
+      },
+      {
         "package": "FLAnimatedImage",
         "repositoryURL": "https://github.com/Flipboard/FLAnimatedImage",
         "state": {

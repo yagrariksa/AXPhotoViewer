@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "AXPhotoViewer",
-            targets: ["AXPhotoViewerSwift", "AXPhotoViewerC"]
+            targets: ["AXPhotoViewer", "AXPhotoViewerC"]
         ),
     ],
     dependencies: [
@@ -19,10 +19,11 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "AXPhotoViewerSwift",
+            name: "AXPhotoViewer",
             dependencies: [
                 .product(name: "AXStateButton", package: "AXStateButton"),
                 .product(name: "FLAnimatedImage", package: "FLAnimatedImage"),
+                "AXPhotoViewerC"
             ],
             path: "Source",
             exclude: [

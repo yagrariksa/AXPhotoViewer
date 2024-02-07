@@ -23,7 +23,6 @@ let package = Package(
             dependencies: [
                 .product(name: "AXStateButton", package: "AXStateButton"),
                 .product(name: "FLAnimatedImage", package: "FLAnimatedImage"),
-                .product(name: "FLAnimatedImage_tvOS", package: "FLAnimatedImage"),
             ],
             path: "Source",
             exclude: [
@@ -47,7 +46,6 @@ let package = Package(
             dependencies: [
                 .product(name: "AXStateButton", package: "AXStateButton"),
                 .product(name: "FLAnimatedImage", package: "FLAnimatedImage"),
-                .product(name: "FLAnimatedImage_tvOS", package: "FLAnimatedImage"),
             ],
             path: "Source/Extensions",
             sources: [
